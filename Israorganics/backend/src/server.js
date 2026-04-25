@@ -10,7 +10,7 @@ const adminRoutes = require('./routes/admin');
 
 const app = express();
 
-app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:5174'] }));
+app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:5174', 'https://isra-organics.vercel.app'] }));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);

@@ -1,8 +1,8 @@
 -- IsraOrganics Database Schema
 -- Run this file in MySQL Workbench or your MySQL client before starting the server
 
-CREATE DATABASE IF NOT EXISTS israorganics;
-USE israorganics;
+-- CREATE DATABASE IF NOT EXISTS israorganics;
+-- USE israorganics;
 
 -- ─── Users (customers) ────────────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS users (

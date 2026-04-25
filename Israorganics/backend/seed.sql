@@ -2,7 +2,7 @@
 -- Run AFTER schema.sql
 -- Admin password is: Admin123! (hashed with bcrypt, 12 rounds)
 
-USE israorganics;
+-- USE israorganics;
 
 -- ─── Admin Account ────────────────────────────────────────────────────────────
 INSERT INTO admins (email, password_hash) VALUES
