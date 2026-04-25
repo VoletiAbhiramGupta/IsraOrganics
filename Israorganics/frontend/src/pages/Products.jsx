@@ -34,7 +34,7 @@ export default function Products() {
   const set = (key, value) => {
     const next = new URLSearchParams(searchParams);
     if (value) next.set(key, value); else next.delete(key);
-    next.delete('page');
+    if (key !== 'page') next.delete('page');
     setSearchParams(next);
   };
 
