@@ -1,0 +1,148 @@
+.navbar {
+  background: var(--white);
+  border-bottom: 1.5px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.navbar__logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+  letter-spacing: -.5px;
+}
+.navbar__logo-isra { color: var(--brand); }
+
+/* ── Desktop links ── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: .95rem;
+  font-weight: 500;
+}
+.navbar__links a { color: var(--text); transition: color .2s; }
+.navbar__links a:hover { color: var(--brand); }
+
+.navbar__cart {
+  position: relative;
+  font-size: 1.3rem;
+  display: flex;
+}
+.navbar__cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--brand);
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Mobile right controls (cart + hamburger) ── */
+.navbar__mobile-right {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ── Hamburger button ── */
+.navbar__hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.navbar__hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform .25s, opacity .25s;
+  transform-origin: center;
+}
+/* Animate to X when open */
+.navbar__hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__hamburger--open span:nth-child(2) { opacity: 0; }
+.navbar__hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile dropdown menu ── */
+.navbar__mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-top: 1.5px solid var(--border);
+  padding: .75rem 1.5rem 1.25rem;
+  gap: .25rem;
+  animation: slideDown .2s ease;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.navbar__mobile-menu a {
+  display: block;
+  padding: .75rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  transition: color .2s;
+}
+.navbar__mobile-menu a:last-child { border-bottom: none; }
+.navbar__mobile-menu a:hover { color: var(--brand); }
+
+.navbar__mobile-signup {
+  display: block;
+  margin-top: .75rem;
+  padding: .75rem !important;
+  background: var(--brand);
+  color: var(--white) !important;
+  text-align: center;
+  border-radius: var(--radius);
+  font-weight: 600 !important;
+  border-bottom: none !important;
+}
+.navbar__mobile-signout {
+  width: 100%;
+  margin-top: .75rem;
+  padding: .75rem;
+  background: transparent;
+  border: 1.5px solid var(--brand);
+  border-radius: var(--radius);
+  color: var(--brand);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.navbar__mobile-signout:hover { background: var(--brand); color: var(--white); }
+
+/* ── Responsive breakpoint ── */
+@media (max-width: 680px) {
+  .navbar__links--desktop { display: none; }
+  .navbar__mobile-right   { display: flex; }
+}

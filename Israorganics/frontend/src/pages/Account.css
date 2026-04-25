@@ -1,0 +1,70 @@
+.account__title { font-size: 2rem; }
+.account__welcome { color: var(--text-muted); margin-bottom: 2rem; }
+
+.account__layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.account__sidebar {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.account__tab {
+  background: none;
+  border: none;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  transition: background .2s, color .2s;
+}
+.account__tab:last-child { border-bottom: none; }
+.account__tab:hover { background: var(--cream-dark); color: var(--text); }
+.account__tab--active { background: var(--cream-dark); color: var(--brand-dark); font-weight: 600; border-left: 3px solid var(--brand); }
+
+.account__panel { padding: 1.75rem; }
+.account__panel h2 { font-size: 1.3rem; margin-bottom: 1.5rem; }
+
+/* Orders */
+.order-card { margin-bottom: 1rem; padding: 1.25rem; }
+.order-card__header { display: flex; align-items: center; gap: 1rem; margin-bottom: .75rem; flex-wrap: wrap; }
+.order-card__id { font-weight: 700; }
+.order-card__date { color: var(--text-muted); font-size: .85rem; margin-left: auto; }
+.order-card__items { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .75rem; }
+.order-card__item {
+  background: var(--cream-dark);
+  border-radius: 6px;
+  padding: .2rem .6rem;
+  font-size: .8rem;
+  color: var(--text-muted);
+}
+.order-card__footer { font-size: .95rem; color: var(--brand-dark); }
+
+/* Danger Zone */
+.danger-zone {
+  border: 1.5px solid #fca5a5;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  background: #fff5f5;
+}
+.danger-zone h3 { color: var(--error); margin-bottom: .5rem; font-size: 1.05rem; }
+.danger-zone p { color: var(--text-muted); font-size: .9rem; margin-bottom: 1.25rem; }
+.danger-zone__confirm p { color: var(--error); font-size: .9rem; margin-bottom: 0; }
+
+/* Reuse row from auth */
+.auth-card__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+@media (max-width: 640px) {
+  .account__layout { grid-template-columns: 1fr; }
+  .account__sidebar { flex-direction: row; overflow-x: auto; }
+  .account__tab { white-space: nowrap; border-bottom: none; border-right: 1px solid var(--border); }
+}

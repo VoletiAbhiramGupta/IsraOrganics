@@ -1,0 +1,114 @@
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(135deg, #1E0A3C 0%, #4C1D95 55%, #7C3AED 100%);
+  color: var(--white);
+  padding: 5rem 0 4rem;
+}
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.hero__eyebrow {
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: .75;
+  margin-bottom: 1rem;
+}
+.hero__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+.hero__title span { color: #FCD34D; }
+.hero__sub { opacity: .85; font-size: 1.05rem; max-width: 480px; margin-bottom: 2rem; }
+.hero__ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero__ctas .btn-outline { border-color: rgba(255,255,255,.6); color: var(--white); }
+.hero__ctas .btn-outline:hover { background: rgba(255,255,255,.15); }
+
+.hero__img-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+.hero__img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── Sections ── */
+.section { padding: 4rem 0; }
+.section__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: .5rem;
+  text-align: center;
+}
+.section__sub {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+/* ── Hair Types ── */
+.hair-types { background: var(--cream-dark); }
+.hair-types__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.hair-type-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform .2s, box-shadow .2s;
+  color: var(--text);
+}
+.hair-type-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.hair-type-card__icon {
+  width: 52px; height: 52px;
+  background: var(--brand);
+  color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.hair-type-card strong { display: block; font-size: .95rem; }
+.hair-type-card p { font-size: .8rem; color: var(--text-muted); margin: 0; }
+
+/* ── Products Grid ── */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ── Why ── */
+.why { background: var(--cream-dark); }
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.why__card { padding: 2rem; text-align: center; }
+.why__icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.why__card h3 { margin-bottom: .5rem; font-size: 1.1rem; }
+.why__card p { color: var(--text-muted); font-size: .9rem; }
+
+@media (max-width: 768px) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__visual { display: none; }
+  .hair-types__grid { grid-template-columns: repeat(2, 1fr); }
+  .why__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .hair-types__grid { grid-template-columns: 1fr; }
+}
